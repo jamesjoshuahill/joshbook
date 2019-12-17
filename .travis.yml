@@ -1,0 +1,9 @@
+language: ruby
+cache: bundler
+services:
+  - postgresql
+before_script:
+  - bin/rails db:create
+script:
+  - bundle exec rubocop --require rubocop-rails
+  - bundle exec rspec
