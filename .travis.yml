@@ -1,9 +1,14 @@
 language: ruby
 cache: bundler
 services:
-  - postgresql
+- postgresql
 before_script:
-  - bin/rails db:create
+- bin/rails db:create
 script:
-  - bundle exec rubocop --require rubocop-rails
-  - bundle exec rspec
+- bundle exec rubocop --require rubocop-rails
+- bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: CkgrDC8QP+jKjndXcEOvu2nH6xVL8QEm7WsbCxEu5Llf3RDhD2xPoeuRdRxVkesvErPVTdCgNjmIR7ILIRb2OQUqbyErBg7hFqmx3B4W4z9u+r0MLQSuetnjaUrYmoIJ3iuGJHpIlmQ/MD5ezZ209pGoXNaY0OhGWOlKaiFG5RDGvcU2JZSyBKVGfNBFq/cWx58rFO5HjpGiPB1Zg8tEtCzZ0jAhQzn1h6yQbTMtnNl686hgOTgPOTjbbHsbiH82cpANlKtfgLF5ElFjwJyjajlMYIKO/QbTI0sKfiPU61206Y6l4SVOLuAVdmCMv/cvRdr/oV7ptmUNrzobfVML82q3XCcWvTBKvuX40WN6Ka6mrvr3a9nTakoeDlw0u4H91FZSDj1NY0LyGwf9POIMl3lc21r57JJ3WOvNS0ZnCV+igvZTHZbgZJGjtVTzWQzXRybvZ9CKZOQfG34SfGcUCPEv59bUUIYnNWxCntZUIufcDkjXzyyAUGGehMHWQkzMB3KiTexksJ5xE9wP/A3IYrUzs0gQa54WZCDGSJRbGSM7+jCbpLNnJWqO+S3UcX3ZDMvEe+mro+oIEUGyIqGoo6yrmHRdGT81s3/mgh+fYx5Vt63NoDyrjpGk+Nuqojzda0ZD6bgDGCpN5QBlfaRx49uWWcPKniW3h+3lau0nvUA=
+  run: "bin/rails db:migrate"

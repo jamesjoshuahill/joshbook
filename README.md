@@ -27,5 +27,12 @@ Hosted on Heroku at https://joshbook.herokuapp.com
 
 To run migrations:
 ```bash
+> brew install heroku/brew/heroku
 > heroku run bin/rails db:migrate
+```
+
+To configure the Travis CI deploy key for Heroku:
+```bash
+> gem install travis
+> travis encrypt $(heroku auth:token) --add deploy.api_key
 ```
