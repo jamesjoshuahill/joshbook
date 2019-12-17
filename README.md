@@ -36,3 +36,5 @@ To configure the Travis CI deploy key for Heroku:
 > gem install travis
 > travis encrypt $(heroku auth:token) --add deploy.api_key
 ```
+
+Merging pull requests to the `master` branch should trigger a deployment to Heroku.
