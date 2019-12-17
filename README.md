@@ -22,5 +22,6 @@ First, clone this repository. Then:
 > bin/rails db:migrate
 
 > bundle exec rspec # Run the tests to ensure it works
+> bundle exec rubocop --require rubocop-rails # Run the linter to check code style
 > bin/rails server # Start the server at localhost:3000
 ```
