@@ -20,3 +20,12 @@ First, clone this repository. Then:
 > bundle exec rubocop --require rubocop-rails # Run the linter to check code style
 > bin/rails server # Start the server at localhost:3000
 ```
+
+## Heroku deployment
+
+Hosted on Heroku at https://joshbook.herokuapp.com
+
+To run migrations:
+```bash
+> heroku run bin/rails db:migrate
+```
