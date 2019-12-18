@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :require_login
+
   def new
     @post = Post.new
   end
@@ -16,5 +18,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:message)
+  end
+
+  def require_login
+    redirect_to :root unless user_signed_in?
   end
 end

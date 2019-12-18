@@ -36,6 +36,10 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
+  # Factories for testing
+  gem 'factory_bot_rails'
+  # Fake data for testing
+  gem 'faker'
   gem 'rspec-rails', '~> 3.5'
   gem 'rubocop', '0.71.0', require: false
   gem 'rubocop-rails'
