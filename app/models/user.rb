@@ -3,4 +3,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :validatable
+
+  validates :password, length: { minimum: 6, maximum: 10 }
 end
