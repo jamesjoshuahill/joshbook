@@ -11,9 +11,16 @@ RSpec.feature "Timeline", type: :feature do
       visit "/posts"
       click_link "New post"
       fill_in "Message", with: "Hello, world!"
+
       click_button "Submit"
-      expect(page).to have_content("Latest posts")
-      expect(page).to have_content("Hello, world!")
+
+      within 'h2' do
+        expect(page).to have_content("Latest posts")
+      end
+      within '.post' do
+        expect(page).to have_content("Hello, world!")
+        expect(page).to have_content(Time.zone.today.strftime("%e %b %Y"))
+      end
     end
   end
 
@@ -21,7 +28,9 @@ RSpec.feature "Timeline", type: :feature do
     scenario "redirects to the home page" do
       visit "/posts"
 
-      expect(page).to have_content("Welcome!")
+      within 'h2' do
+        expect(page).to have_content("Welcome!")
+      end
     end
   end
 end

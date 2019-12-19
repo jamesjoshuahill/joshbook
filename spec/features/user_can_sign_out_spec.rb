@@ -8,7 +8,11 @@ RSpec.feature "Sign out", type: :feature do
 
     click_link "Sign out"
 
-    expect(page).to have_content("Signed out successfully")
-    expect(page).to have_content("Welcome!")
+    within '.notice' do
+      expect(page).to have_content("Signed out successfully")
+    end
+    within 'h2' do
+      expect(page).to have_content("Welcome!")
+    end
   end
 end
