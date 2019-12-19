@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  # Devise redirects to :user_root after sign up and sign in
+  get '/posts' => 'posts#index', as: :user_root
   resources :posts
 end

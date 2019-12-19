@@ -12,6 +12,7 @@ RSpec.feature "Timeline", type: :feature do
       click_link "New post"
       fill_in "Message", with: "Hello, world!"
       click_button "Submit"
+      expect(page).to have_content("Latest posts")
       expect(page).to have_content("Hello, world!")
     end
   end
@@ -20,7 +21,7 @@ RSpec.feature "Timeline", type: :feature do
     scenario "redirects to the home page" do
       visit "/posts"
 
-      expect(page).to have_content("Joshbook")
+      expect(page).to have_content("Welcome!")
     end
   end
 end
