@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
-  context "when logged in" do
+  context "when signed in" do
     before(:each) do
       user = FactoryBot.create(:user)
       login_as(user, :scope => :user)
@@ -17,7 +17,7 @@ RSpec.feature "Timeline", type: :feature do
     end
   end
 
-  context "when logged out" do
+  context "when signed out" do
     scenario "redirects to the home page" do
       visit "/posts"
 

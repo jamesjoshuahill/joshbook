@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "Sign in", type: :feature do
-  scenario "Registered user can sign in" do
+  scenario "Signed up user can sign in" do
     user = FactoryBot.create(:user)
     visit "/"
     click_link "Sign in"
