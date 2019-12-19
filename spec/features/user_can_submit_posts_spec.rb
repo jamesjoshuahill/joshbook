@@ -19,6 +19,7 @@ RSpec.feature "Timeline", type: :feature do
       end
       within '.post' do
         expect(page).to have_content("Hello, world!")
+        expect(page).to have_content(Time.zone.today.strftime("%e %b %Y"))
       end
     end
   end

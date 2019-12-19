@@ -5,5 +5,8 @@
 <% end %>
 
 <% @posts.each do |post| %>
-  <p class="post"><%= post.message %></p>
+  <div class="post">
+    <p><%= post.message %></p>
+    <p><%= post.created_at.strftime("%l:%M %p, %e %b %Y") %></p>
+  </div>
 <% end %>
