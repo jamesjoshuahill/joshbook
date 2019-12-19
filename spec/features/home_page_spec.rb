@@ -4,6 +4,6 @@ RSpec.feature "Home page", type: :feature do
   scenario "Can see the home page" do
     visit "/"
 
-    expect(page).to have_content("Joshbook")
+    expect(page).to have_content("Welcome!")
   end
 end
