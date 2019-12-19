@@ -10,7 +10,11 @@ RSpec.feature "Sign in", type: :feature do
 
     click_button "Sign in"
 
-    expect(page).to have_content("Signed in successfully")
-    expect(page).to have_content("Latest posts")
+    within '.notice' do
+      expect(page).to have_content("Signed in successfully")
+    end
+    within 'h2' do
+      expect(page).to have_content("Latest posts")
+    end
   end
 end
